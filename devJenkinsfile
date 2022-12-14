@@ -3,19 +3,16 @@ pipeline {
    stages {
        stage('Build Code') {
            steps {
-               sh """
-               echo "Building Artifact from Develop Branch"
-               "account_id=$(aws sts get-caller-identity --query "Account" --output text)"
-               echo "$account_id"
+               sh "echo 'Building Artifact from Develop Branch'"
+               sh "account_id=$(aws sts get-caller-identity --query "Account" --output text)"
+               sh "echo '$account_id'"
                """
            }
        }
       stage('Deploy Code') {
           steps {
           input 'Should we deploy to Production Environment?'
-               sh """
-               echo "Deploying Code from Develop Branch"
-               """
+               sh "echo 'Deploying Code from Develop Branch'"
           }
       }
    }
