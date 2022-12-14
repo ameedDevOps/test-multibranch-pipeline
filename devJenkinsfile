@@ -2,6 +2,7 @@ pipeline {
    agent any
     environment {
         ACCOUNT_ID = credentials('account_id')
+        NAME = credentials('name_id')
     }
    stages {
        stage('Build Code') {
