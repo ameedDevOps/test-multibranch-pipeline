@@ -4,7 +4,7 @@ pipeline {
        stage('Build Code') {
            steps {
                echo 'Building Artifact from Develop Branch'
-               account_id={BUILD_NUMBER}
+               sh "account_id={BUILD_NUMBER}"
                echo "$account_id"
            }
        }
