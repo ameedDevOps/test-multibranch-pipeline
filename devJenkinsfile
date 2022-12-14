@@ -10,6 +10,7 @@ pipeline {
        }
       stage('Deploy Code') {
           steps {
+          input 'Should we deploy to Production Environment?'
                sh """
                echo "Deploying Code from Develop Branch"
                """
