@@ -5,7 +5,7 @@ pipeline {
            steps {
                echo 'Building Artifact from Develop Branch'
                //account_id=$(aws sts get-caller-identity --query "Account" --output text)
-               echo "$account_id"
+               //echo "$account_id"
            }
        }
       stage('Deploy Code') {
