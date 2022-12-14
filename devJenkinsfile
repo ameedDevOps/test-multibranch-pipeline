@@ -1,9 +1,13 @@
 pipeline {
    agent any
+    environment {
+        ACCOUNT_ID = credentials('account_id')
+    }
    stages {
        stage('Build Code') {
            steps {
                echo 'Building Artifact from Develop Branch'
+               echo "${ACCOUNT_ID}"
            }
        }
       stage('Deploy Code') {
